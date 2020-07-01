@@ -30,3 +30,6 @@ Create a browser source and paster your local directory on the url field like th
 ![](https://i.gyazo.com/176f7bfb7af033a2e672b3b4a67cf0b6.png)
 
 then use a color key filter to clear the green background and you are good to go!
+
+# IMPORTANT NOTE
+IF YOU ARE USING A CHEAP PCB (no shame) YOU MAY NEED TO UNPLUG AND PLUG AGAIN THE CONTROLLES
