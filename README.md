@@ -1,2 +1,2 @@
-#Fighter hitbox version of Osu Bongo cat!
+# Fighter hitbox version of Osu Bongo cat!
 
