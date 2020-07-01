@@ -1,6 +1,4 @@
 
-  // var gamepadInfo = document.getElementById("gamepad-info");
-  // var ball = document.getElementById("ball");
   var start;
   var x = 0;
   var y = 0;
@@ -27,8 +25,7 @@
   var pabajo = document.getElementById("pabajo")
   var palado = document.getElementById("palado")
   var palotrolao = document.getElementById("palotrolao")
-  var sparking = document.getElementById("sparking")
-  var fiesta = document.getElementById("fiesta")
+
   var fondo = document.getElementById("fondo")
 
   var br1 = document.getElementById("bracito1")
@@ -102,6 +99,7 @@
       return;
 
     var gp = gamepads[0];
+    
     if (vuelta && buttonPressed(gp.buttons[0]) && !(buttonPressed(gp.buttons[1]) && buttonPressed(gp.buttons[2])  && buttonPressed(gp.buttons[3])  && buttonPressed(gp.buttons[4])  && buttonPressed(gp.buttons[5])  && buttonPressed(gp.buttons[6])  && buttonPressed(gp.buttons[7])  && buttonPressed(gp.buttons[8])  && buttonPressed(gp.buttons[9]))) {
       boton1.classList.remove("invisible")
       brazod = 1;
@@ -199,13 +197,13 @@
     
 
     //axis
-    // console.log(gp.axes[0]);
+ 
 
-    switch (x) {
+    switch (x) {  // change x to gp.axes[0] if ur system is axe based
       case -1:
         palado.classList.remove("invisible")
         palotrolao.classList.add("invisible")
-        // console.log("der");
+
         brazoi=1
         break;
       case 1:
@@ -223,19 +221,18 @@
         // console.log("neutro");
         break;
     }
-    switch (y) {
+
+    switch (y) { // change y to gp.axes[1] if ur system is axe based
       case 1:
         parriba.classList.remove("invisible")
         pabajo.classList.add("invisible")
-        
-        // console.log("arriba");
+
         brazoi=2
         break;
       case -1:
         parriba.classList.add("invisible")
         pabajo.classList.remove("invisible")
-        
-        // console.log("abajo");
+
         brazoi=3
         break;
       default:
@@ -247,8 +244,6 @@
     }
     x=0
     y=0
-
-    // console.log(brazoi);
     
     
     switch (brazoi) {
@@ -277,7 +272,7 @@
         
         break;
       case 0:
-      // console.log("mostrando izq neutro");
+
       leftUp.classList.remove("invisible")
       left0.classList.add("invisible")
       left1.classList.add("invisible")
@@ -298,7 +293,7 @@
         br7.classList.add("invisible")
         br8.classList.add("invisible")
         rightUp.classList.add("invisible")
-        // console.log(brazo);
+
         break;
       case 2:
         br1.classList.add("invisible")
@@ -310,7 +305,6 @@
         br7.classList.add("invisible")
         br8.classList.add("invisible")
         rightUp.classList.add("invisible")
-        // console.log(brazo);
         break;
         
       case 3:
@@ -398,9 +392,6 @@
         rightUp.classList.remove("invisible")
         break;
     }
-
-    // ball.style.left = a * 2 + "px";
-    // ball.style.top = b * 2 + "px";
     brazod=0;
     brazoi=0;
     var start = rAF(gameLoop);
