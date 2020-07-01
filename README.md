@@ -6,19 +6,19 @@ https://romthesheep.github.io/Arcade-Bongo-Cat/
 Html version of ![bongocat-osu](https://github.com/kuroni/bongocat-osu) with based incorporated Greenscreen
 
 To match your controller button configuration use the usefull website https://html5gamepad.com/codes. 
-The default index contains the config for the ![brook fighting](https://www.brookaccessory.com/detail/09922855/) pcb, tho changin this is pretty simple.
+The default index contains the config for the ![brook fighting](https://www.brookaccessory.com/detail/09922855/) pcb, tho changing this is pretty simple.
 
-Atm the only available version is an hitbox controller, maybe in the future I will implement a fight stick version if i see demand for it.
+Atm the only available version is an hitbox controller, maybe in the future I will implement a fight stick version if I see demand for it.
 
 # my controller doesnt match that configuration, what do I do?
 
 Head to https://html5gamepad.com/codes and write down your Bvalues and the position on the board
-Ive assigned this keyvalues to the values of the board:
+I've assigned this keyvalues to the values of the board:
 
 ![](https://i.gyazo.com/22b7d8d1d8ae089f4074d55824894649.png)
 
 You will have to match your Bvalues to the gp.buttons array index.
-In teh following example, Bvalue 0 is linked to button 1 so we will need to activate the element boton1 and set brazod to 1.
+In the following example, Bvalue 0 is linked to button 1 so we will need to activate the element boton1 and set brazod to 1.
 ![](https://i.gyazo.com/55ee877594eb8c48ef8f771bd49f71b6.png)
 
 If your config is axis based forthermore editing is requiered.
@@ -26,7 +26,7 @@ Changing the variables on the y and x switches to gp.axes, instructions to achie
 
 # I want to use this on my OBS, how can I do it?
 
-Create a browser source and paster your local directory on the url field like this:
+Create a browser source and paste your local directory on the url field like this:
 
 ![](https://i.gyazo.com/176f7bfb7af033a2e672b3b4a67cf0b6.png)
 
