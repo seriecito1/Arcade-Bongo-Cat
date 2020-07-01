@@ -1,6 +1,7 @@
 # Fighter hitbox version of Osu Bongo cat!
 
-![Preview! must use a controller](https://romthesheep.github.io/Arcade-Bongo-Cat/index.html)
+Preview! must use a controller:
+https://romthesheep.github.io/Arcade-Bongo-Cat/
 
 Html version of ![bongocat-osu](https://github.com/kuroni/bongocat-osu) with based incorporated Greenscreen
 
