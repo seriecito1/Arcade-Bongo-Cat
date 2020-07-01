@@ -1,5 +1,7 @@
 # Fighter hitbox version of Osu Bongo cat!
 
+![](https://im5.ezgif.com/tmp/ezgif-5-db7217d8d6c3.gif)
+
 Preview! must use a controller:
 https://romthesheep.github.io/Arcade-Bongo-Cat/
 
