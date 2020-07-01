@@ -11,7 +11,7 @@ Atm the only available version is an hitbox controller, maybe in the future I wi
 
 # my controller doesnt match that configuration, what do I do?
 
-Head to https://html5gamepad.com/codes and write down ypour Bvalues and the position on the board
+Head to https://html5gamepad.com/codes and write down your Bvalues and the position on the board
 Ive assigned this keyvalues to the values of the board:
 
 ![](https://i.gyazo.com/22b7d8d1d8ae089f4074d55824894649.png)
