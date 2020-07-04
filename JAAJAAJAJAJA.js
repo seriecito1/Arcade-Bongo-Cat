@@ -245,7 +245,7 @@
 
 
     if (ejes) {
-      switch (gp.axes[0]) {  // change x to gp.axes[0] if ur system is axe based
+      switch (gp.axes[0]) { 
         case -1:
           palado.classList.remove("invisible")
           palotrolao.classList.add("invisible")
@@ -268,7 +268,7 @@
           break;
       }
 
-      switch (gp.axes[1]) { // change y to gp.axes[1] if ur system is axe based
+      switch (gp.axes[1]) { 
         case 1:
           parriba.classList.remove("invisible")
           pabajo.classList.add("invisible")
@@ -291,7 +291,7 @@
       
     }
     else{
-      switch (x) {  // change x to gp.axes[0] if ur system is axe based
+      switch (x) {  
         case -1:
           palado.classList.remove("invisible")
           palotrolao.classList.add("invisible")
@@ -314,7 +314,7 @@
           break;
       }
 
-      switch (y) { // change y to gp.axes[1] if ur system is axe based
+      switch (y) { 
         case 1:
           parriba.classList.remove("invisible")
           pabajo.classList.add("invisible")
