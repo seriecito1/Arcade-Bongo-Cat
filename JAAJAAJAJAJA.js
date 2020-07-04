@@ -7,7 +7,7 @@
  *          5 6 7 8                                                                  5 6 7 8
  *          1 2 3 4                                                                  1 2 3 4 
  *    
- *          botones mano izquierda (en caso de que tu hitbox no use ajes)            Left hand buttons:
+ *          botones mano izquierda (en caso de que tu hitbox no use ejes)            Left hand buttons:
  *          
  *          L U R                                                                    L U R
  *                D                                                                        D
@@ -48,6 +48,8 @@
   var x = 0;
   var y = 0;
   var gp;
+  const queryString = window.location.search;
+  const urlParams = new URLSearchParams(queryString);
 
   var leftUp = document.getElementById("leftup")
   var rightUp = document.getElementById("rightUp")
@@ -81,11 +83,16 @@
   var br6 = document.getElementById("bracito6")
   var br7 = document.getElementById("bracito7")
   var br8 = document.getElementById("bracito8")
-  
 
   var brazod=0;
   var brazoi=0;
   
+
+  if (urlParams.has('ejes')) {
+    ejes = urlParams.get('ejes')
+
+  }
+
 
   var rAF = window.mozRequestAnimationFrame ||
     window.webkitRequestAnimationFrame ||
