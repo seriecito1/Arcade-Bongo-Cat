@@ -25,8 +25,6 @@ You will have to match your Bvalues to vbX variables at the start of the js file
 
 ![](https://i.gyazo.com/05e25dd9769379d19b538dc7092cedbb.png)
 
-If your config is axis based forthermore editing is requiered.
-Changing the variables on the y and x switches to gp.axes, instructions to achieve this can be found on the js comments (line 201 and 224)
 
 # I want to use this on my OBS, how can I do it?
 
