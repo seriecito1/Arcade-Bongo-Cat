@@ -1,6 +1,5 @@
 # Fighter hitbox version of Osu Bongo cat!
 
-![](https://im5.ezgif.com/tmp/ezgif-5-db7217d8d6c3.gif)
 
 
 [Video in action!](https://www.youtube.com/watch?v=QBGh3QNaqsM&feature=youtu.be)
