@@ -21,9 +21,9 @@ I've assigned this keyvalues to the values of the board:
 
 ![](https://i.gyazo.com/22b7d8d1d8ae089f4074d55824894649.png)
 
-You will have to match your Bvalues to vbX variables at the start of the js file. This is the default configurartion:
+You will have to match your Bvalues to vbX variables at the start of the js file. This is the default configuration:
 
-![](https://i.gyazo.com/05e25dd9769379d19b538dc7092cedbb.png)
+![](https://i.gyazo.com/05fc40989e4240c68f08f8973d5c6c1f.png)
 
 
 # I want to use this on my OBS, how can I do it?
