@@ -21,9 +21,9 @@ I've assigned this keyvalues to the values of the board:
 
 ![](https://i.gyazo.com/22b7d8d1d8ae089f4074d55824894649.png)
 
-You will have to match your Bvalues to the gp.buttons array index.
-In the following example, Bvalue 0 is linked to button 1 so we will need to activate the element boton1 and set brazod to 1.
-![](https://i.gyazo.com/55ee877594eb8c48ef8f771bd49f71b6.png)
+You will have to match your Bvalues to vbX variables at the start of the js file. This is the default configurartion:
+
+![](https://i.gyazo.com/05e25dd9769379d19b538dc7092cedbb.png)
 
 If your config is axis based forthermore editing is requiered.
 Changing the variables on the y and x switches to gp.axes, instructions to achieve this can be found on the js comments (line 201 and 224)
