@@ -7,7 +7,7 @@
  *          5 6 7 8                                                                  5 6 7 8
  *          1 2 3 4                                                                  1 2 3 4 
  *    
- *          botones mano izquierda (en caso de que tu hitbox no use ajes)            Left hand buttons:
+ *          botones mano izquierda (en caso de que tu hitbox no use ejes)            Left hand buttons:
  *          
  *          L U R                                                                    L U R
  *                D                                                                        D
