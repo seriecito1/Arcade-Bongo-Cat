@@ -4,8 +4,9 @@
 
 [Video in action!](https://www.youtube.com/watch?v=QBGh3QNaqsM&feature=youtu.be)
 
-Preview! must use a controller:
-https://romthesheep.github.io/Arcade-Bongo-Cat/
+[review! must use a controller](https://romthesheep.github.io/Arcade-Bongo-Cat/)
+
+[here is the axis version](https://romthesheep.github.io/Arcade-Bongo-Cat/index.html?ejes=true)
 
 Html version of ![bongocat-osu](https://github.com/kuroni/bongocat-osu) with based incorporated Greenscreen
 
