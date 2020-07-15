@@ -38,6 +38,13 @@
   var vbRight = 15;
   var vbLeft = 14;
 
+    /**  
+   *  Edicion de los ejes X e Y en caso de que tu pcb no use los 0 y 1 para los ejes X e Y
+   *  Change this variables to change the axis index for your controller, 0 and 1 are the standard but not universal 
+   */
+  var nEjeX = 0;
+  var nEjeY = 1;
+
   // Si tu hitbox funciona a base de ejes o si usas un stick en vez de un hitbox cambia el 0 por 1
   // If your hitbox uses axis for X and Y position or you are using a fight stick change this variable to 1
   var ejes = 0;
@@ -48,8 +55,7 @@
   // basada en ejes el eje x o el y estan invertidos, cambia la variable del eje correspondiente a -1
   var invertX = 1;
   var invertY = 1;
-  var nEjeX = 0;
-  var nEjeY = 1;
+
   
 //Logica y animaciones
 
