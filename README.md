@@ -24,8 +24,12 @@ I've assigned this keyvalues to the values of the board:
 
 You will have to match your Bvalues to vbX variables at the start of the js file. This is the default configuration:
 
-![](https://i.gyazo.com/05fc40989e4240c68f08f8973d5c6c1f.png)
+![](https://i.gyazo.com/fbf4dddb205ad0c66197af03ba44ac5f.png)
 
+If you want to enable the stick mode or your hitbox is axis based you will have to change the parameters below:
+Some users have inform me that their controllers use inverted logic for the X and Y axis, correcting this is as simple as changing the value of invertX and invertY as shown in the image
+
+![](https://i.gyazo.com/2d041b69a7981b755e389b4913a017c9.png)
 
 # I want to use this on my OBS, how can I do it?
 
