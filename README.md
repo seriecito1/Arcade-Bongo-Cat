@@ -1,4 +1,4 @@
-# Fighter hitbox version of Osu Bongo cat!
+# Fighter hitbox/arcade stick version of Osu Bongo cat!
 
 
 
