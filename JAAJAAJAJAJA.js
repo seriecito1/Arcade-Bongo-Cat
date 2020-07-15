@@ -38,9 +38,16 @@
   var vbRight = 15;
   var vbLeft = 14;
 
-  // Si tu hitbox funciona a base de ejes cambia el false por true
-  // If your hitbox uses axis for X and Y position change this variable to true
-  var ejes = false;
+  // Si tu hitbox funciona a base de ejes o si usas un stick en vez de un hitbox cambia el 0 por 1
+  // If your hitbox uses axis for X and Y position or you are using a fight stick change this variable to 1
+  var ejes = 0;
+  var stick = 0;
+  
+
+  // Existen controladores que usan logica negativa en sus sticks, si usando una configuracion 
+  // basada en ejes el eje x o el y estan invertidos, cambia la variable del eje correspondiente a -1
+  var invertX = 1;
+  var invertY = 1;
   
 //Logica y animaciones
 
@@ -51,11 +58,38 @@
   const queryString = window.location.search;
   const urlParams = new URLSearchParams(queryString);
 
-  var leftUp = document.getElementById("leftup")
+  if (urlParams.has('ejes')) {
+    if (urlParams.get('ejes') == '1') {
+      ejes = 1
+      console.log("modo ejes activado");
+    }
+  }
+  if (urlParams.has('stick')) {
+    if (urlParams.get('stick')== '1') {
+      ejes = 1
+      stick = 1
+     console.log("Modo stick activado"); 
+    }
+  }
+
+  if (stick == 0) {
+    var leftUp = document.getElementById("leftup")
+    var left0 = document.getElementById("left0")
+    var left1 = document.getElementById("left1")
+    var left2 = document.getElementById("left2")
+    var left3 = document.getElementById("left3")
+  } else {
+    var leftUp = document.getElementById("left0Stick")
+    var left0 = document.getElementById("leftIzqStick")
+    var left1 = document.getElementById("leftUpStick")
+    var left2 = document.getElementById("leftDerStick")
+    var left3 = document.getElementById("rightDownStick")
+  }
+
+  
+
+  
   var rightUp = document.getElementById("rightUp")
-  var left0 = document.getElementById("left0")
-  var left1 = document.getElementById("left1")
-  var left2 = document.getElementById("left2")
   var right0 = document.getElementById("right0")
   var right1 = document.getElementById("right1")
   var right2 = document.getElementById("right2")
@@ -68,12 +102,26 @@
   var boton6 = document.getElementById("boton6")
   var boton7 = document.getElementById("boton7")
   var boton8 = document.getElementById("boton8")
+
+
   var parriba = document.getElementById("parriba")
   var pabajo = document.getElementById("pabajo")
   var palado = document.getElementById("palado")
   var palotrolao = document.getElementById("palotrolao")
 
-  var fondo = document.getElementById("fondo")
+
+  if (stick == '1') {
+    var fondo = document.getElementById("fondoStick");
+    fondo.classList.remove("invisible");
+    parriba = document.getElementById("conjuntoVacio")
+    pabajo = document.getElementById("conjuntoVacio")
+    palado = document.getElementById("conjuntoVacio")
+    palotrolao = document.getElementById("conjuntoVacio")
+
+  } else{
+    var fondo = document.getElementById("fondo");
+    
+  }
 
   var br1 = document.getElementById("bracito1")
   var br2 = document.getElementById("bracito2")
@@ -88,11 +136,7 @@
   var brazoi=0;
   
 
-  if (urlParams.has('ejes')) {
-    ejes = urlParams.get('ejes')
-
-  }
-
+ 
 
   var rAF = window.mozRequestAnimationFrame ||
     window.webkitRequestAnimationFrame ||
@@ -152,7 +196,7 @@
 
     var gp = gamepads[0];
     
-    if (vuelta && buttonPressed(gp.buttons[vb1]) && !(buttonPressed(gp.buttons[vb2]) && buttonPressed(gp.buttons[vb3])  && buttonPressed(gp.buttons[vb4])  && buttonPressed(gp.buttons[vb5])  && buttonPressed(gp.buttons[vb6])  && buttonPressed(gp.buttons[vb7])  && buttonPressed(gp.buttons[vb8])  && buttonPressed(gp.buttons[8])  && buttonPressed(gp.buttons[9]))) {
+    if (vuelta && buttonPressed(gp.buttons[vb1]) && !(buttonPressed(gp.buttons[vb2]) && buttonPressed(gp.buttons[vb3])  && buttonPressed(gp.buttons[vb4])  && buttonPressed(gp.buttons[vb5])  && buttonPressed(gp.buttons[vb6])  && buttonPressed(gp.buttons[vb7])  && buttonPressed(gp.buttons[vb8]))) {
       boton1.classList.remove("invisible")
       brazod = 1;
       console.log("boton 0");
@@ -163,7 +207,7 @@
 
     }
       
-    if ( vuelta && buttonPressed(gp.buttons[vb2]) && !(buttonPressed(gp.buttons[vb1]) && buttonPressed(gp.buttons[vb3])  && buttonPressed(gp.buttons[vb4])  && buttonPressed(gp.buttons[vb5])  && buttonPressed(gp.buttons[vb6])  && buttonPressed(gp.buttons[vb7])  && buttonPressed(gp.buttons[vb8])  && buttonPressed(gp.buttons[8])  && buttonPressed(gp.buttons[9]))) {
+    if ( vuelta && buttonPressed(gp.buttons[vb2]) && !(buttonPressed(gp.buttons[vb1]) && buttonPressed(gp.buttons[vb3])  && buttonPressed(gp.buttons[vb4])  && buttonPressed(gp.buttons[vb5])  && buttonPressed(gp.buttons[vb6])  && buttonPressed(gp.buttons[vb7])  && buttonPressed(gp.buttons[vb8]))) {
       boton2.classList.remove("invisible")
       brazod=2;
       console.log("boton 1");
@@ -172,7 +216,7 @@
       boton2.classList.add("invisible")
 
     }
-    if (vuelta && buttonPressed(gp.buttons[vb3]) && !(buttonPressed(gp.buttons[vb2]) && buttonPressed(gp.buttons[vb1])  && buttonPressed(gp.buttons[vb4])  && buttonPressed(gp.buttons[vb5])  && buttonPressed(gp.buttons[vb6])  && buttonPressed(gp.buttons[vb7])  && buttonPressed(gp.buttons[vb8])  && buttonPressed(gp.buttons[8])  && buttonPressed(gp.buttons[9]))) {
+    if (vuelta && buttonPressed(gp.buttons[vb3]) && !(buttonPressed(gp.buttons[vb2]) && buttonPressed(gp.buttons[vb1])  && buttonPressed(gp.buttons[vb4])  && buttonPressed(gp.buttons[vb5])  && buttonPressed(gp.buttons[vb6])  && buttonPressed(gp.buttons[vb7])  && buttonPressed(gp.buttons[vb8]))) {
       boton3.classList.remove("invisible")
       brazod=3
       console.log("boton 2");
@@ -181,7 +225,7 @@
       boton3.classList.add("invisible")
 
     }
-    if (vuelta && buttonPressed(gp.buttons[vb4]) && !(buttonPressed(gp.buttons[vb2]) && buttonPressed(gp.buttons[vb3])  && buttonPressed(gp.buttons[vb1])  && buttonPressed(gp.buttons[vb5])  && buttonPressed(gp.buttons[vb6])  && buttonPressed(gp.buttons[vb7])  && buttonPressed(gp.buttons[vb8])  && buttonPressed(gp.buttons[8])  && buttonPressed(gp.buttons[9]))) {
+    if (vuelta && buttonPressed(gp.buttons[vb4]) && !(buttonPressed(gp.buttons[vb2]) && buttonPressed(gp.buttons[vb3])  && buttonPressed(gp.buttons[vb1])  && buttonPressed(gp.buttons[vb5])  && buttonPressed(gp.buttons[vb6])  && buttonPressed(gp.buttons[vb7])  && buttonPressed(gp.buttons[vb8]))) {
       boton4.classList.remove("invisible")
       brazod=4
       console.log("boton 3");
@@ -191,7 +235,7 @@
       boton4.classList.add("invisible")
 
     }
-    if (vuelta && buttonPressed(gp.buttons[vb5]) && !(buttonPressed(gp.buttons[vb2]) && buttonPressed(gp.buttons[vb3])  && buttonPressed(gp.buttons[vb4])  && buttonPressed(gp.buttons[vb1])  && buttonPressed(gp.buttons[vb6])  && buttonPressed(gp.buttons[vb7])  && buttonPressed(gp.buttons[vb8])  && buttonPressed(gp.buttons[8])  && buttonPressed(gp.buttons[9]))) {
+    if (vuelta && buttonPressed(gp.buttons[vb5]) && !(buttonPressed(gp.buttons[vb2]) && buttonPressed(gp.buttons[vb3])  && buttonPressed(gp.buttons[vb4])  && buttonPressed(gp.buttons[vb1])  && buttonPressed(gp.buttons[vb6])  && buttonPressed(gp.buttons[vb7])  && buttonPressed(gp.buttons[vb8]))) {
       boton5.classList.remove("invisible")
       brazod=5
       console.log("boton 4");
@@ -200,7 +244,7 @@
       boton5.classList.add("invisible")
 
     }
-    if (vuelta && buttonPressed(gp.buttons[vb6]) && !(buttonPressed(gp.buttons[vb2]) && buttonPressed(gp.buttons[vb3])  && buttonPressed(gp.buttons[vb4])  && buttonPressed(gp.buttons[vb5])  && buttonPressed(gp.buttons[vb1])  && buttonPressed(gp.buttons[vb7])  && buttonPressed(gp.buttons[vb8])  && buttonPressed(gp.buttons[8])  && buttonPressed(gp.buttons[9]))) {
+    if (vuelta && buttonPressed(gp.buttons[vb6]) && !(buttonPressed(gp.buttons[vb2]) && buttonPressed(gp.buttons[vb3])  && buttonPressed(gp.buttons[vb4])  && buttonPressed(gp.buttons[vb5])  && buttonPressed(gp.buttons[vb1])  && buttonPressed(gp.buttons[vb7])  && buttonPressed(gp.buttons[vb8]))) {
       boton6.classList.remove("invisible")
       brazod=6
       console.log("boton 5");
@@ -209,7 +253,7 @@
       boton6.classList.add("invisible")
 
     }
-    if (vuelta && buttonPressed(gp.buttons[vb7]) && !(buttonPressed(gp.buttons[vb1]) && buttonPressed(gp.buttons[vb2])  && buttonPressed(gp.buttons[vb3])  && buttonPressed(gp.buttons[vb4])  && buttonPressed(gp.buttons[vb5])  && buttonPressed(gp.buttons[vb7])  && buttonPressed(gp.buttons[vb8])  && buttonPressed(gp.buttons[8])  && buttonPressed(gp.buttons[9]))) {
+    if (vuelta && buttonPressed(gp.buttons[vb7]) && !(buttonPressed(gp.buttons[vb1]) && buttonPressed(gp.buttons[vb2])  && buttonPressed(gp.buttons[vb3])  && buttonPressed(gp.buttons[vb4])  && buttonPressed(gp.buttons[vb5])  && buttonPressed(gp.buttons[vb7])  && buttonPressed(gp.buttons[vb8]))) {
       boton7.classList.remove("invisible")
       brazod=7
       console.log( "boton 6"); 
@@ -219,7 +263,7 @@
 
 
     }
-    if (vuelta && buttonPressed(gp.buttons[vb8]) && !(buttonPressed(gp.buttons[vb1]) && buttonPressed(gp.buttons[vb2])  && buttonPressed(gp.buttons[vb3])  && buttonPressed(gp.buttons[vb4])  && buttonPressed(gp.buttons[vb5])  && buttonPressed(gp.buttons[vb6])  && buttonPressed(gp.buttons[vb7])  && buttonPressed(gp.buttons[8])  && buttonPressed(gp.buttons[9]))) {
+    if (vuelta && buttonPressed(gp.buttons[vb8]) && !(buttonPressed(gp.buttons[vb1]) && buttonPressed(gp.buttons[vb2])  && buttonPressed(gp.buttons[vb3])  && buttonPressed(gp.buttons[vb4])  && buttonPressed(gp.buttons[vb5])  && buttonPressed(gp.buttons[vb6])  && buttonPressed(gp.buttons[vb7]))) {
       boton8.classList.remove("invisible")
       brazod=8
       console.log("boton 7");
@@ -230,19 +274,19 @@
 
 
     }
-    if (vuelta && buttonPressed(gp.buttons[vbUp]) && !(buttonPressed(gp.buttons[vb1]) && buttonPressed(gp.buttons[vb2])  && buttonPressed(gp.buttons[vb3])  && buttonPressed(gp.buttons[vb4])  && buttonPressed(gp.buttons[vb5])  && buttonPressed(gp.buttons[vb6])  && buttonPressed(gp.buttons[vb7])  && buttonPressed(gp.buttons[vb8])  && buttonPressed(gp.buttons[9]))) {
+    if (vuelta && buttonPressed(gp.buttons[vbUp]) && !(buttonPressed(gp.buttons[vb1]) && buttonPressed(gp.buttons[vb2])  && buttonPressed(gp.buttons[vb3])  && buttonPressed(gp.buttons[vb4])  && buttonPressed(gp.buttons[vb5])  && buttonPressed(gp.buttons[vb6])  && buttonPressed(gp.buttons[vb7])  && buttonPressed(gp.buttons[vb8]))) {
       y=-1
       console.log("boton 8 akka parriba");
     }
-    if (vuelta && buttonPressed(gp.buttons[vbDown]) && !(buttonPressed(gp.buttons[vb1]) && buttonPressed(gp.buttons[vb2])  && buttonPressed(gp.buttons[vb3])  && buttonPressed(gp.buttons[vb4])  && buttonPressed(gp.buttons[vb5])  && buttonPressed(gp.buttons[vb6])  && buttonPressed(gp.buttons[vb7])  && buttonPressed(gp.buttons[vb8])  && buttonPressed(gp.buttons[8]))) {
+    if (vuelta && buttonPressed(gp.buttons[vbDown]) && !(buttonPressed(gp.buttons[vb1]) && buttonPressed(gp.buttons[vb2])  && buttonPressed(gp.buttons[vb3])  && buttonPressed(gp.buttons[vb4])  && buttonPressed(gp.buttons[vb5])  && buttonPressed(gp.buttons[vb6])  && buttonPressed(gp.buttons[vb7])  && buttonPressed(gp.buttons[vb8]))) {
       y=1
       console.log("boton 9 akka pabajo");
     }
-    if (vuelta && buttonPressed(gp.buttons[vbRight]) && !(buttonPressed(gp.buttons[vb1]) && buttonPressed(gp.buttons[vb2])  && buttonPressed(gp.buttons[vb3])  && buttonPressed(gp.buttons[vb4])  && buttonPressed(gp.buttons[vb5])  && buttonPressed(gp.buttons[vb6])  && buttonPressed(gp.buttons[vb7])  && buttonPressed(gp.buttons[vb8])  && buttonPressed(gp.buttons[9]))) {
+    if (vuelta && buttonPressed(gp.buttons[vbRight]) && !(buttonPressed(gp.buttons[vb1]) && buttonPressed(gp.buttons[vb2])  && buttonPressed(gp.buttons[vb3])  && buttonPressed(gp.buttons[vb4])  && buttonPressed(gp.buttons[vb5])  && buttonPressed(gp.buttons[vb6])  && buttonPressed(gp.buttons[vb7])  && buttonPressed(gp.buttons[vb8]))) {
            x=1
       console.log("boton 8 akka el pp");
     }
-    if (vuelta && buttonPressed(gp.buttons[vbLeft]) && !(buttonPressed(gp.buttons[vb1]) && buttonPressed(gp.buttons[vb2])  && buttonPressed(gp.buttons[vb3])  && buttonPressed(gp.buttons[vb4])  && buttonPressed(gp.buttons[vb5])  && buttonPressed(gp.buttons[vb6])  && buttonPressed(gp.buttons[vb7])  && buttonPressed(gp.buttons[vb8])  && buttonPressed(gp.buttons[8]))) {
+    if (vuelta && buttonPressed(gp.buttons[vbLeft]) && !(buttonPressed(gp.buttons[vb1]) && buttonPressed(gp.buttons[vb2])  && buttonPressed(gp.buttons[vb3])  && buttonPressed(gp.buttons[vb4])  && buttonPressed(gp.buttons[vb5])  && buttonPressed(gp.buttons[vb6])  && buttonPressed(gp.buttons[vb7])  && buttonPressed(gp.buttons[vb8]))) {
       x=-1
       console.log("boton 9 akka el psoe");
     }
@@ -252,7 +296,7 @@
 
 
     if (ejes) {
-      switch (gp.axes[0]) { 
+      switch (gp.axes[0]*invertX) { 
         case -1:
           palado.classList.remove("invisible")
           palotrolao.classList.add("invisible")
@@ -262,7 +306,7 @@
         case 1:
           palado.classList.add("invisible")
           palotrolao.classList.remove("invisible")
-          brazoi=2
+          brazoi=3
           left0.classList.remove("invisible")
           left1.classList.add("invisible")
           left2.classList.add("invisible")
@@ -275,7 +319,7 @@
           break;
       }
 
-      switch (gp.axes[1]) { 
+      switch (gp.axes[1]*invertY) { 
         case 1:
           parriba.classList.remove("invisible")
           pabajo.classList.add("invisible")
@@ -286,7 +330,7 @@
           parriba.classList.add("invisible")
           pabajo.classList.remove("invisible")
 
-          brazoi=3
+          brazoi=4
           break;
         default:
           parriba.classList.add("invisible")
@@ -326,7 +370,7 @@
           parriba.classList.remove("invisible")
           pabajo.classList.add("invisible")
 
-          brazoi=2
+          brazoi=3
           break;
         case -1:
           parriba.classList.add("invisible")
@@ -345,31 +389,45 @@
     x=0
     y=0
     
+    console.log(brazoi);
     
     switch (brazoi) {
       case 1:
         left0.classList.remove("invisible")
         left1.classList.add("invisible")
         left2.classList.add("invisible")
+        left3.classList.add("invisible")
         // console.log("mostrando izq 0");
         leftUp.classList.add("invisible")
         break;
       case 2:
+      left0.classList.add("invisible")
       left1.classList.remove("invisible")
       left2.classList.add("invisible")
-      left0.classList.add("invisible")
-      // console.log("mostrando izq 1");
+      left3.classList.add("invisible")
       leftUp.classList.add("invisible")
+      console.log("caso 2");
+      
         break;
       case 3:
-      left2.classList.remove("invisible")
-      left0.classList.add("invisible")
-      left1.classList.add("invisible")
-      // console.log("mostrando izq 2");
-      leftUp.classList.add("invisible")
+        left0.classList.add("invisible")
+        left1.classList.add("invisible")
+        left2.classList.remove("invisible")
+        left3.classList.add("invisible")
+  
+        leftUp.classList.add("invisible")
+      console.log("caso 3");
+      
         break;
         case 4:
-        
+          left0.classList.add("invisible")
+          left1.classList.add("invisible")
+          left2.classList.add("invisible")
+          left3.classList.remove("invisible")
+          // console.log("mostrando izq 2");
+          leftUp.classList.add("invisible")
+          console.log("caso 4");
+          
         break;
       case 0:
 
@@ -377,6 +435,7 @@
       left0.classList.add("invisible")
       left1.classList.add("invisible")
       left2.classList.add("invisible")
+      left3.classList.add("invisible")
         break;
     }
    
