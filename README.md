@@ -6,6 +6,8 @@
 
 [preview!](https://romthesheep.github.io/Arcade-Bongo-Cat/)  must use a controller [If your controller is axis based use this link instead!](https://romthesheep.github.io/Arcade-Bongo-Cat/index.html?ejes=true)
 
+[Added fight stick mode!](https://romthesheep.github.io/Arcade-Bongo-Cat/?stick=1)
+
 Html version of ![bongocat-osu](https://github.com/kuroni/bongocat-osu) with based incorporated Greenscreen
 
 To match your controller button configuration use the usefull website https://html5gamepad.com/codes. 
