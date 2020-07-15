@@ -48,6 +48,8 @@
   // basada en ejes el eje x o el y estan invertidos, cambia la variable del eje correspondiente a -1
   var invertX = 1;
   var invertY = 1;
+  var nEjeX = 0;
+  var nEjeY = 1;
   
 //Logica y animaciones
 
@@ -296,7 +298,7 @@
 
 
     if (ejes) {
-      switch (gp.axes[0]*invertX) { 
+      switch (gp.axes[nEjeX]*invertX) { 
         case -1:
           palado.classList.remove("invisible")
           palotrolao.classList.add("invisible")
@@ -319,7 +321,7 @@
           break;
       }
 
-      switch (gp.axes[1]*invertY) { 
+      switch (gp.axes[nEjeY]*invertY) { 
         case 1:
           parriba.classList.remove("invisible")
           pabajo.classList.add("invisible")
