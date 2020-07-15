@@ -26,8 +26,8 @@ You will have to match your Bvalues to vbX variables at the start of the js file
 
 ![](https://i.gyazo.com/fbf4dddb205ad0c66197af03ba44ac5f.png)
 
-If you want to enable the stick mode or your hitbox is axis based you will have to change the parameters below:
-Some users have inform me that their controllers use inverted logic for the X and Y axis, correcting this is as simple as changing the value of invertX and invertY as shown in the image
+If you want to enable the stick mode or your hitbox is axis based you will have to change the parameters below. 
+Some users have inform me that their controllers use inverted logic for the X and Y axis, correcting this is as simple as changing the value of invertX and invertY as shown in the image.
 
 ![](https://i.gyazo.com/2d041b69a7981b755e389b4913a017c9.png)
 
