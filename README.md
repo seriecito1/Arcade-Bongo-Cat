@@ -2,7 +2,7 @@ Right now there are two distinct versions of this software, one focused on hitbo
 To download each one you must seek them in the [releases page](https://github.com/ROMthesheep/Arcade-Bongo-Cat/releases)
 or just click the links bellow
 
-### [-Hitbox (and two axis sticks) version](https://github.com/ROMthesheep/Arcade-Bongo-Cat/archive/v3.2.zip)
+### [-Hitbox and two axis sticks version](https://github.com/ROMthesheep/Arcade-Bongo-Cat/archive/v3.2.zip)
 ### [-One axis sticks version](https://github.com/ROMthesheep/Arcade-Bongo-Cat/archive/v3.1.zip)
 
 ___
