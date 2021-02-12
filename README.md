@@ -11,10 +11,10 @@ or just click the link above
 
 [Added fight stick mode!](https://romthesheep.github.io/Arcade-Bongo-Cat/?stick=1)
 
-Html version of ![bongocat-osu](https://github.com/kuroni/bongocat-osu) with based incorporated Greenscreen
+Html version of [bongocat-osu](https://github.com/kuroni/bongocat-osu) with based incorporated Greenscreen
 
 To match your controller button configuration use the usefull website https://html5gamepad.com. 
-The default index contains the config for the ![brook fighting](https://www.brookaccessory.com/detail/09922855/) pcb, tho changing this is pretty simple.
+The default index contains the config for the [brook fighting](https://www.brookaccessory.com/detail/09922855/) pcb, tho changing this is pretty simple.
 
 Atm the only available version is an hitbox controller, maybe in the future I will implement a fight stick version if I see demand for it.
 
