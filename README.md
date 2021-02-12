@@ -1,5 +1,8 @@
 # Fighter hitbox/arcade stick version of Osu Bongo cat!
 
+Right now there are two distinct versions of this software, [one focused on hitboxes and two axis sticks](https://github.com/ROMthesheep/Arcade-Bongo-Cat/archive/v3.2.zip) and [one focused on single axis fight sticks](https://github.com/ROMthesheep/Arcade-Bongo-Cat/archive/v3.1.zip), like the razor panthera and the victrix
+To download each one you must seek them in the [releases page](https://github.com/ROMthesheep/Arcade-Bongo-Cat/releases)
+or just click the link above
 
 
 [Video in action!](https://www.youtube.com/watch?v=QBGh3QNaqsM&feature=youtu.be)
