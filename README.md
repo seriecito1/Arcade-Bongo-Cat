@@ -13,14 +13,14 @@ or just click the link above
 
 Html version of ![bongocat-osu](https://github.com/kuroni/bongocat-osu) with based incorporated Greenscreen
 
-To match your controller button configuration use the usefull website https://html5gamepad.com/codes. 
+To match your controller button configuration use the usefull website https://html5gamepad.com. 
 The default index contains the config for the ![brook fighting](https://www.brookaccessory.com/detail/09922855/) pcb, tho changing this is pretty simple.
 
 Atm the only available version is an hitbox controller, maybe in the future I will implement a fight stick version if I see demand for it.
 
 # my controller doesnt match that configuration, what do I do?
 
-Head to https://html5gamepad.com/codes and write down your Bvalues and the position on the board. 
+Head to https://html5gamepad.com and write down your Bvalues and the position on the board. 
 I've assigned this keyvalues to the values of the board:
 
 ![](https://i.gyazo.com/22b7d8d1d8ae089f4074d55824894649.png)
