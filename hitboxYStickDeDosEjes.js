@@ -1,48 +1,60 @@
-/**       español:                                                                English:
+/**
+ *          Español:                                                                 English:
  *          Mapeo de hitbox                                                          hitbox mapping:
  *
  *          botones mano derecha                                                     Right hand buttons:
  *
  *          5 6 7 8                                                                  5 6 7 8
  *          1 2 3 4                                                                  1 2 3 4
+ *
+ *          botones mano izquierda (en caso de que tu hitbox no use ejes)            Left hand buttons:
+ *
+ *          L U R                                                                    L U R
+ *                D                                                                        D
+ *
+ *
+ *                                               Full hitbox quick reference:
+ *
+ *                                         vbLeft vbUp vbRight   vb5 vb6 vb7 vb8
+ *                                                        vbDown  vb1 vb2 vb3 vb4
  */
-
-
 //valores de hardware:
-
 //mano derecha: //right hand:
+// posicion del boton en la hitbox = codigo del boton en esa posicion dado por https://html5gamepad.com/codes
+// buton position on the hitbox = button code of that position from https://html5gamepad.com/code
 
-// posicion del boton en el stick = codigo del boton en esa posicion dado por https://gamepad-tester.com/
-// buton position on the stick = button code of that position from https://gamepad-tester.com/
-
-var vb1 = 1;
-var vb2 = 2;
+var vb1 = 0;
+var vb2 = 1;
 var vb3 = 7;
 var vb4 = 6;
-var vb5 = 0;
+var vb5 = 2;
 var vb6 = 3;
 var vb7 = 5;
 var vb8 = 4;
 
+//mano izquierda: //left hand:
 
-// mano izquierda: //left hand:
+var vbUp = 12;
+var vbDown = 13;
+var vbRight = 15;
+var vbLeft = 14;
+
+// Si tu hitbox funciona a base de ejes o si usas un stick que usa dos ejes en vez de un hitbox cambia el 0 por 1
+// If your hitbox uses axis for X and Y position or you are using a fight stick change this variable to 1
+var ejes = 1;
+var stick = 0;
 
 /**
- *  Poner aqui el numero del eje que use tu stick, visita la pagina ttps://html5gamepad.com/codes para verlo, en caso de que tu stick use dos ejes, 
- *  uno para la X y otro para la Y, usar el index.html y modificar el archivo "hitbox y stick de dos ejes.js"
+ *  Edicion de los ejes X e Y en caso de que tu pcb no use los 0 y 1 para los ejes X e Y
+ *  Change this variables to change the axis index for your controller, 0 and 1 are the standard but not universal
  */
+var nEjeX = 0;
+var nEjeY = 1;
 
-var nEje = 9;
-
-
-// En caso de que el stick no este funcionando, ir a la pagina https://gamepad-tester.com/ y al mover el stick en una direccion cualquiera
-// veras algo parecido a esto: https://i.gyazo.com/10bc2749cf89fa2417ed9568b1185ba0.png. Pon el numero correspondiente en cada uno de los valores de abajo
-// En el caso de la imagen, el stick estaba siendo empujado a la izquierda, asi que copiaremos ese nuemero en nLeft
-
-var nUp = -1;
-var nDown = 0.14285;
-var nRight = -0.42857;
-var nLeft = 0.71429;
+// Existen controladores que usan logica negativa en sus sticks, si usando una configuracion
+// basada en ejes el eje x o el y estan invertidos, cambia la variable del eje correspondiente a -1
+var invertX = 1;
+var invertY = 1;
 
 
 
@@ -52,12 +64,12 @@ var nLeft = 0.71429;
 
 
 
+//Logica y animaciones
 
-//Logica y animaciones 
 /**
- * 
- *                                          NO TOCAR MAS ALLA DE AQUI SI NO SABES LO QUE ESTAS TOCANDO
- * 
+ *
+ *            NO TOCAR MAS ALLA DE AQUI SI NO SABES LO QUE ESTAS TOCANDO
+ *
  */
 
 var start;
@@ -66,16 +78,6 @@ var y = 0;
 var gp;
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
-
-var ejes=0
-var stick = 1;
-var invertX = 1;
-var invertY = 1;
-
-nUp = parseInt(nUp * 1000);
-nDown = parseInt(nDown * 1000);
-nRight = parseInt(nRight * 1000);
-nLeft = parseInt(nLeft * 1000);
 
 if (urlParams.has("ejes")) {
   if (urlParams.get("ejes") == "1") {
@@ -393,45 +395,164 @@ function gameLoop() {
   } else {
     boton8.classList.add("invisible");
   }
+  if (
+    vuelta &&
+    buttonPressed(gp.buttons[vbUp]) &&
+    !(
+      buttonPressed(gp.buttons[vb1]) &&
+      buttonPressed(gp.buttons[vb2]) &&
+      buttonPressed(gp.buttons[vb3]) &&
+      buttonPressed(gp.buttons[vb4]) &&
+      buttonPressed(gp.buttons[vb5]) &&
+      buttonPressed(gp.buttons[vb6]) &&
+      buttonPressed(gp.buttons[vb7]) &&
+      buttonPressed(gp.buttons[vb8])
+    )
+  ) {
+    y = -1;
+    console.log("boton 8 akka parriba");
+  }
+  if (
+    vuelta &&
+    buttonPressed(gp.buttons[vbDown]) &&
+    !(
+      buttonPressed(gp.buttons[vb1]) &&
+      buttonPressed(gp.buttons[vb2]) &&
+      buttonPressed(gp.buttons[vb3]) &&
+      buttonPressed(gp.buttons[vb4]) &&
+      buttonPressed(gp.buttons[vb5]) &&
+      buttonPressed(gp.buttons[vb6]) &&
+      buttonPressed(gp.buttons[vb7]) &&
+      buttonPressed(gp.buttons[vb8])
+    )
+  ) {
+    y = 1;
+    console.log("boton 9 akka pabajo");
+  }
+  if (
+    vuelta &&
+    buttonPressed(gp.buttons[vbRight]) &&
+    !(
+      buttonPressed(gp.buttons[vb1]) &&
+      buttonPressed(gp.buttons[vb2]) &&
+      buttonPressed(gp.buttons[vb3]) &&
+      buttonPressed(gp.buttons[vb4]) &&
+      buttonPressed(gp.buttons[vb5]) &&
+      buttonPressed(gp.buttons[vb6]) &&
+      buttonPressed(gp.buttons[vb7]) &&
+      buttonPressed(gp.buttons[vb8])
+    )
+  ) {
+    x = 1;
+    console.log("boton 8 akka el pp");
+  }
+  if (
+    vuelta &&
+    buttonPressed(gp.buttons[vbLeft]) &&
+    !(
+      buttonPressed(gp.buttons[vb1]) &&
+      buttonPressed(gp.buttons[vb2]) &&
+      buttonPressed(gp.buttons[vb3]) &&
+      buttonPressed(gp.buttons[vb4]) &&
+      buttonPressed(gp.buttons[vb5]) &&
+      buttonPressed(gp.buttons[vb6]) &&
+      buttonPressed(gp.buttons[vb7]) &&
+      buttonPressed(gp.buttons[vb8])
+    )
+  ) {
+    x = -1;
+    console.log("boton 9 akka el psoe");
+  }
 
   //axis
 
-  switch (parseInt(gp.axes[nEje] * 1000)) {
-    case nLeft:
-      palado.classList.remove("invisible");
-      palotrolao.classList.add("invisible");
-      brazoi = 1;
-      break;
-    case nRight:
-      palado.classList.add("invisible");
-      palotrolao.classList.remove("invisible");
-      brazoi = 3;
-      left0.classList.remove("invisible");
-      left1.classList.add("invisible");
-      left2.classList.add("invisible");
-      break;
+  if (ejes) {
+    switch (gp.axes[nEjeX] * invertX) {
+      case -1:
+        palado.classList.remove("invisible");
+        palotrolao.classList.add("invisible");
 
-    case nUp:
-      parriba.classList.remove("invisible");
-      pabajo.classList.add("invisible");
-      brazoi = 2;
-      break;
-    case nDown:
-      parriba.classList.add("invisible");
-      pabajo.classList.remove("invisible");
-      brazoi = 4;
-      break;
+        brazoi = 1;
+        break;
+      case 1:
+        palado.classList.add("invisible");
+        palotrolao.classList.remove("invisible");
+        brazoi = 3;
+        left0.classList.remove("invisible");
+        left1.classList.add("invisible");
+        left2.classList.add("invisible");
+        // console.log("izq");
+        break;
+      default:
+        palado.classList.add("invisible");
+        palotrolao.classList.add("invisible");
+        // console.log("neutro");
+        break;
+    }
 
-    case 128:
-      //neutro
-      parriba.classList.add("invisible");
-      pabajo.classList.add("invisible");
-      palado.classList.add("invisible");
-      palotrolao.classList.add("invisible");
+    switch (gp.axes[nEjeY] * invertY) {
+      case 1:
+        parriba.classList.remove("invisible");
+        pabajo.classList.add("invisible");
 
-      break;
+        brazoi = 2;
+        break;
+      case -1:
+        parriba.classList.add("invisible");
+        pabajo.classList.remove("invisible");
+
+        brazoi = 4;
+        break;
+      default:
+        parriba.classList.add("invisible");
+        pabajo.classList.add("invisible");
+
+        break;
+    }
+  } else {
+    switch (x) {
+      case -1:
+        palado.classList.remove("invisible");
+        palotrolao.classList.add("invisible");
+
+        brazoi = 1;
+        break;
+      case 1:
+        palado.classList.add("invisible");
+        palotrolao.classList.remove("invisible");
+        brazoi = 2;
+        left0.classList.remove("invisible");
+        left1.classList.add("invisible");
+        left2.classList.add("invisible");
+        // console.log("izq");
+        break;
+      default:
+        palado.classList.add("invisible");
+        palotrolao.classList.add("invisible");
+        // console.log("neutro");
+        break;
+    }
+
+    switch (y) {
+      case 1:
+        parriba.classList.remove("invisible");
+        pabajo.classList.add("invisible");
+
+        brazoi = 3;
+        break;
+      case -1:
+        parriba.classList.add("invisible");
+        pabajo.classList.remove("invisible");
+
+        brazoi = 3;
+        break;
+      default:
+        parriba.classList.add("invisible");
+        pabajo.classList.add("invisible");
+
+        break;
+    }
   }
-
   x = 0;
   y = 0;
 
