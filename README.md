@@ -44,4 +44,6 @@ then use a color key filter to clear the green background and you are good to go
 # IMPORTANT NOTE
 IF YOU ARE USING A CHEAP PCB (no shame) YOU MAY NEED TO UNPLUG AND PLUG AGAIN THE CONTROLLER
 
+___
+
 inspiration from [bongocat-osu](https://github.com/kuroni/bongocat-osu)
