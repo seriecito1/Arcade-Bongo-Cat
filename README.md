@@ -1,17 +1,17 @@
 # Fighter hitbox/arcade stick version of Osu Bongo cat!
 
-Right now there are two distinct versions of this software, [one focused on hitboxes and two axis sticks](https://github.com/ROMthesheep/Arcade-Bongo-Cat/archive/v3.2.zip) and [one focused on single axis fight sticks](https://github.com/ROMthesheep/Arcade-Bongo-Cat/archive/v3.1.zip), like the razor panthera and the victrix
+Right now there are two distinct versions of this software, one focused on hitboxes and two axis sticks and one focused on single axis fight sticks like the razor panthera and the victrix
 To download each one you must seek them in the [releases page](https://github.com/ROMthesheep/Arcade-Bongo-Cat/releases)
-or just click the link above
+or just click the links bellow
+
+## [Hitbox and two axis sticks](https://github.com/ROMthesheep/Arcade-Bongo-Cat/archive/v3.2.zip)
+## [One axis sticks](https://github.com/ROMthesheep/Arcade-Bongo-Cat/archive/v3.1.zip)
+
 
 
 [Video in action!](https://www.youtube.com/watch?v=QBGh3QNaqsM&feature=youtu.be)
 
-[preview!](https://romthesheep.github.io/Arcade-Bongo-Cat/)  must use a controller [If your controller is axis based use this link instead!](https://romthesheep.github.io/Arcade-Bongo-Cat/index.html?ejes=true)
-
-[Added fight stick mode!](https://romthesheep.github.io/Arcade-Bongo-Cat/?stick=1)
-
-Html version of [bongocat-osu](https://github.com/kuroni/bongocat-osu) with based incorporated Greenscreen
+[preview!](https://romthesheep.github.io/Arcade-Bongo-Cat/)
 
 To match your controller button configuration use the usefull website https://html5gamepad.com. 
 The default index contains the config for the [brook fighting](https://www.brookaccessory.com/detail/09922855/) pcb, tho changing this is pretty simple.
@@ -44,3 +44,5 @@ then use a color key filter to clear the green background and you are good to go
 
 # IMPORTANT NOTE
 IF YOU ARE USING A CHEAP PCB (no shame) YOU MAY NEED TO UNPLUG AND PLUG AGAIN THE CONTROLLER
+
+inspiration from [bongocat-osu](https://github.com/kuroni/bongocat-osu)
