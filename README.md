@@ -48,3 +48,5 @@ IF YOU ARE USING A CHEAP PCB (no shame) YOU MAY NEED TO UNPLUG AND PLUG AGAIN TH
 ___
 
 inspiration from [bongocat-osu](https://github.com/kuroni/bongocat-osu)
+
+This proyect is on the end of its lifecycle, it will not get any new features, only maintenance
