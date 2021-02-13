@@ -20,7 +20,7 @@
  */
 //valores de hardware:
 //mano derecha: //right hand:
-// posicion del boton en la hitbox = codigo del boton en esa posicion dado por https://html5gamepad.com/codes
+// posicion del boton en la hitbox = codigo del boton en esa posicion dado por https://html5gamepad.com/code
 // buton position on the hitbox = button code of that position from https://html5gamepad.com/code
 
 var vb1 = 0;
