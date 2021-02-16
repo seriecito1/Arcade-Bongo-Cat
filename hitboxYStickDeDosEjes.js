@@ -544,7 +544,7 @@ function gameLoop() {
         parriba.classList.add("invisible");
         pabajo.classList.remove("invisible");
 
-        brazoi = 3;
+        brazoi = 4;
         break;
       default:
         parriba.classList.add("invisible");
