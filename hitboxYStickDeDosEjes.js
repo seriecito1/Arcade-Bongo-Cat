@@ -41,7 +41,7 @@ var vbLeft = 14;
 
 // Si tu hitbox funciona a base de ejes o si usas un stick que usa dos ejes en vez de un hitbox cambia el 0 por 1
 // If your hitbox uses axis for X and Y position or you are using a fight stick change this variable to 1
-var ejes = 1;
+var ejes = 0;
 var stick = 0;
 
 /**
