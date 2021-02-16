@@ -20,8 +20,8 @@
  */
 //valores de hardware:
 //mano derecha: //right hand:
-// posicion del boton en la hitbox = codigo del boton en esa posicion dado por https://html5gamepad.com/code
-// buton position on the hitbox = button code of that position from https://html5gamepad.com/code
+// posicion del boton en la hitbox = codigo del boton en esa posicion dado por https://html5gamepad.com
+// buton position on the hitbox = button code of that position from https://html5gamepad.com
 
 var vb1 = 0;
 var vb2 = 1;
@@ -41,7 +41,7 @@ var vbLeft = 14;
 
 // Si tu hitbox funciona a base de ejes o si usas un stick que usa dos ejes en vez de un hitbox cambia el 0 por 1
 // If your hitbox uses axis for X and Y position or you are using a fight stick change this variable to 1
-var ejes = 1;
+var ejes = 0;
 var stick = 0;
 
 /**
