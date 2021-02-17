@@ -4,7 +4,7 @@ To download each one you must seek them in the [releases page](https://github.co
 or just click the links bellow
 
 ### [- Download hitbox/switch based stick and two axis sticks version](https://github.com/ROMthesheep/Arcade-Bongo-Cat/archive/v3.1.1.zip)
-### [- Download one axis sticks version](https://github.com/ROMthesheep/Arcade-Bongo-Cat/releases/tag/V3.1.zip)
+### [- Download one axis sticks version](https://github.com/ROMthesheep/Arcade-Bongo-Cat/archive/V3.1.zip)
 
 ___
 # Fighter hitbox/arcade stick version of Osu Bongo cat!
