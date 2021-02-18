@@ -20,7 +20,7 @@ Atm the only available version is an hitbox controller, maybe in the future I wi
 
 # my controller doesnt match that configuration, what do I do?
 
-[Step by step guide (ES)](https://www.youtube.com/watch?v=2YYZuEi9p7Y)
+[Step by step video guide (spanish)](https://www.youtube.com/watch?v=2YYZuEi9p7Y)
 
 Head to https://html5gamepad.com and write down your Bvalues and the position on the board. 
 I've assigned this keyvalues to the values of the board:
