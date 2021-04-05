@@ -24,13 +24,13 @@
 // buton position on the hitbox = button code of that position from https://html5gamepad.com
 
 var vb1 = 0;
-var vb2 = 1;
-var vb3 = 7;
+var vb2 = 4;
+var vb3 = 5;
 var vb4 = 6;
-var vb5 = 2;
-var vb6 = 3;
-var vb7 = 5;
-var vb8 = 4;
+var vb5 = 1;
+var vb6 = 2;
+var vb7 = 3;
+var vb8 = 7;
 
 //mano izquierda: //left hand:
 
@@ -41,8 +41,8 @@ var vbLeft = 14;
 
 // Si tu hitbox funciona a base de ejes o si usas un stick que usa dos ejes en vez de un hitbox cambia el 0 por 1
 // If your hitbox uses axis for X and Y position or you are using a fight stick change this variable to 1
-var ejes = 0;
-var stick = 0;
+var ejes = 1;
+var stick = 1;
 
 /**
  *  Edicion de los ejes X e Y en caso de que tu pcb no use los 0 y 1 para los ejes X e Y
